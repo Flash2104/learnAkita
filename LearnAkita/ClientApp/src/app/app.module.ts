@@ -8,7 +8,7 @@ import { CounterComponent } from './components/counter/counter.component';
 import { FetchDataComponent } from './components/fetch-data/fetch-data.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
-import { TodosListComponent } from './components/todos-list/todos-list.component';
+import { TodosListComponent } from './todos-list/list/todos-list.component';
 
 
 @NgModule({
