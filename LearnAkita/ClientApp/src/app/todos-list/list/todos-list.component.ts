@@ -3,8 +3,8 @@ import { ID } from '@datorama/akita';
 import { ITodo } from '../store/todo.model';
 
 @Component({
+    selector: 'app-todos',
     templateUrl: './todos-list.component.html',
-    styleUrls: ['./todos-list.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TodosListComponent implements OnInit {
@@ -18,4 +18,8 @@ export class TodosListComponent implements OnInit {
     ngOnInit(): void {
 
     }
+
+    trackByFn(index, todo) {
+        return todo.id;
+      }
 }

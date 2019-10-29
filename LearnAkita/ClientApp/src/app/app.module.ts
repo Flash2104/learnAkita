@@ -3,12 +3,14 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { AppComponent } from './app.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { FetchDataComponent } from './components/fetch-data/fetch-data.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
-import { TodosListComponent } from './todos-list/list/todos-list.component';
+import { TodosPageComponent } from './todos-list/page/todos-page.component';
+import { TodosModule } from './todos-list/todos.module';
 
 
 @NgModule({
@@ -17,18 +19,19 @@ import { TodosListComponent } from './todos-list/list/todos-list.component';
     NavMenuComponent,
     HomeComponent,
     CounterComponent,
-    FetchDataComponent,
-    TodosListComponent
+    FetchDataComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    TodosModule,
+    AkitaNgDevtools.forRoot(),
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'todos-list', component: TodosListComponent },
+      { path: 'todos-list', component: TodosPageComponent },
     ])
   ],
   providers: [],

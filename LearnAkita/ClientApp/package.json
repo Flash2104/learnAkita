@@ -22,6 +22,7 @@
     "@angular/platform-server": "8.0.0",
     "@angular/router": "8.0.0",
     "@datorama/akita": "^4.10.9",
+    "@datorama/akita-ngdevtools": "^3.0.2",
     "@nguniversal/module-map-ngfactory-loader": "8.0.0-rc.1",
     "aspnet-prerendering": "^3.0.1",
     "bootstrap": "^4.3.1",
