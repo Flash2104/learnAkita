@@ -11,7 +11,7 @@ import { TodosState, TodosStore } from './todos.store';
 export class TodosQuery extends QueryEntity<TodosState, ITodo> {
   selectVisibilityFilter$ = this.select(state => state.ui.filter);
 
-  selectVisibleTodos$ = combineLatest([this.selectVisibilityFilter$, this.selectAll(), this.getVisibleTodos]);
+  selectVisibleTodos$ = combineLatest(this.selectVisibilityFilter$, this.selectAll(), this.getVisibleTodos);
 
   constructor(protected store: TodosStore) {
     super(store);

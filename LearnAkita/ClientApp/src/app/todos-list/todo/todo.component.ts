@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ID } from '@datorama/akita';
 import { untilDestroyed } from 'ngx-take-until-destroy';
@@ -9,7 +9,8 @@ import { ITodo } from '../store/todo.model';
   templateUrl: './todo.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TodoComponent implements OnInit {
+export class TodoComponent implements OnInit, OnDestroy {
+
   @Input() todo: ITodo;
   @Output() complete = new EventEmitter<ITodo>();
   @Output() delete = new EventEmitter<ID>();
@@ -26,4 +27,6 @@ export class TodoComponent implements OnInit {
     });
   }
 
+  ngOnDestroy(): void {
+  }
 }

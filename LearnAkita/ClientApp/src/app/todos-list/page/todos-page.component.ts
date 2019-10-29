@@ -20,7 +20,7 @@ export class TodosPageComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.todos$ = this.todosQuery.selectVisibleTodos$[1];
+    this.todos$ = this.todosQuery.selectVisibleTodos$;
     this.activeFilter$ = this.todosQuery.selectVisibilityFilter$;
   }
 
