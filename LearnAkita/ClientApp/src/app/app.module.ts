@@ -32,6 +32,7 @@ import { TodosModule } from './todos-list/todos.module';
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'todos-list', component: TodosPageComponent },
+      { path: 'akita-shop', loadChildren: () => import('./akita-shop/akita-shop.module').then(mod => mod.AkitaShopModule) }
     ])
   ],
   providers: [],
